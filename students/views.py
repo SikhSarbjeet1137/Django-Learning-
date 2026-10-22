@@ -10,3 +10,6 @@ def about(request):
     return HttpResponse("This is the about page.")
 def status_check(request):
     return HttpResponse("Request Successfull",status=200)
+
+def student_details(request,student_id):
+    return HttpResponse(f"Student ID: {student_id}")
