@@ -13,3 +13,17 @@ def status_check(request):
 
 def student_details(request,student_id):
     return HttpResponse(f"Student ID: {student_id}")
+
+def home_page(request):
+    students=[
+        {'name': 'Aarav', 'course': 'iMCA', 'marks': 75},
+    {'name': 'Sarbjeet', 'course': 'iMCA', 'marks': 82},
+    {'name': 'Krishna', 'course': 'BCA', 'marks': 82},
+    ]
+    context={
+        'student_name': 'Sarbjeet',
+        'course': 'IMCA',
+        'semester': 7,
+        'students': students
+    }
+    return render(request,'home.html',context)

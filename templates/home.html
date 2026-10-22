@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block title %}Students | Student Management
+System{% endblock %} {% block content %}
+<h2>Student Results</h2>
+
+<ul>
+  {% for student in students %}
+  <li>
+    {{ forloop.counter }}. {{ student.name|upper }} — {{ student.marks }} marks
+  </li>
+  {% empty %}
+  <li>No students found.</li>
+  {% endfor %}
+</ul>
+
+<p>Total students: {{ students|length }}</p>
+
+<button onclick="showwelcome()">Click Here</button>
+
+{% endblock %}
